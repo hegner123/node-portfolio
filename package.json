@@ -1,14 +1,18 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "my portfolio",
+  "description": "My Portfolio Nodified",
+  "engines": {
+    "node": "10.x"
+  },
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "node test.js"
   },
   "keywords": [
-    "portfolio"
+    "portfolio",
+    "node"
   ],
   "author": "michael hegner",
   "license": "ISC",
@@ -17,5 +21,9 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "nodemailer": "^6.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hegner123/node-portfolio"
   }
 }
