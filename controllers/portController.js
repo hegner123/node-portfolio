@@ -45,15 +45,15 @@ async function mail(dataObj) {
 module.exports = function(app){
   
   app.get('/', function(req,res){
-    res.render('../views/index');
+    res.render('views/index');
   });
 
   app.get('/portfolio', function(req,res){
-    res.render('../views/portfolio');
+    res.render('views/portfolio');
   });
 
   app.get('/contact', function(req,res){
-    res.render('../views/contact');
+    res.render('views/contact');
   });
 
 
