@@ -1,22 +1,20 @@
-var express = require('express');
+const express = require('express')
+const path = require('path')
 var portController = require('./controllers/portController')
+const PORT = process.env.PORT || 5000
 
 var app = express();
-
-// set up template engine
-app.set('view engine', 'ejs');
-
-// static files
-
-app.use(express.static('./'));
-
 
 // fire controllers
 
 portController(app);
 
+express()
+  .use(express.static('./'))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-// listen to port
-app.listen(3002);
-console.log("You are listening to port 3002");
+
 
