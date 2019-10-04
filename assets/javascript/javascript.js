@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 var firebaseConfig = {
   apiKey: "AIzaSyDB_5rwXL4ptzzuPrAAl5L5fEDZajYh2Rg",
   authDomain: "michael-hegner-portfolio.firebaseapp.com",
