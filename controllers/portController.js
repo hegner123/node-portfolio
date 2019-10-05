@@ -14,21 +14,21 @@ async function mail(dataObj) {
   
   
     
-  // create reusable transporter object using the default SMTP transport
+  
   let transporter = nodemailer.createTransport({
-      host: 'Smtp.gmail.com',
-      port: 465,
-      secure: true, // true for 465, false for other ports
+      host: 'smtp.sendgrid.net',
+      port: 587,
+      secure: false, // true for 465, false for other ports
       auth: {
-          user: "hegner123", // generated ethereal user
-          pass: "GingER699" // generated ethereal password
+          user: "apikey", 
+          pass: "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" 
       }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-      from: '"Michael Hegner" <hegner123@gmail.com>', // sender address
-      to: data2, // list of receivers
+      from: '"Michael Hegner"<hegner123@gmail.com>', // sender address
+      to: [data2, "hegner123@gmail.com"], // list of receivers
       bcc: 'hegner123@gmail.com',
       subject: 'Thanks for your request', // Subject line
       text: "Thanks for requesting a copy of my resume " + data1 + ".", // plain text body
@@ -37,7 +37,7 @@ async function mail(dataObj) {
   });
 
   console.log('Message sent: %s', info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+  
 
 
 }
