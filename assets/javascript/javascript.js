@@ -9,15 +9,15 @@ $(document).ready(function(){
 
     var inputName = $("#input-name").val();
     var inputEmail = $("#input-email").val();
-    
-    
+
+
 
     var sendData = {
       data1:inputName,
       data2:inputEmail,
-      
+
     }
-   
+
 
     $.ajax({
       type: 'POST',

@@ -2,6 +2,9 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
 
+
+
+
 var urlencodedParser = bodyParser.urlencoded({extended:false});
 
 // async..await is not allowed in global scope, must use a wrapper
@@ -11,17 +14,17 @@ async function mail(dataObj) {
 
   var data1 = dataObj.data1
   var data2 = dataObj.data2
-  
-  
-    
-  
+
+
+
+
   let transporter = nodemailer.createTransport({
       host: 'smtp.sendgrid.net',
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-          user: "apikey", 
-          pass: "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" 
+          user: "apikey",
+          pass: process.env.API_KEY
       }
   });
 
@@ -37,13 +40,13 @@ async function mail(dataObj) {
   });
 
   console.log('Message sent: %s', info.messageId);
-  
+
 
 
 }
 
 module.exports = function(app){
-  
+
   app.get('/', function(req,res){
     console.log("controller link")
     res.render('pages/index');
