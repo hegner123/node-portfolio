@@ -2,9 +2,6 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
 
-
-
-
 var urlencodedParser = bodyParser.urlencoded({extended:false});
 
 // async..await is not allowed in global scope, must use a wrapper
@@ -14,24 +11,24 @@ async function mail(dataObj) {
 
   var data1 = dataObj.data1
   var data2 = dataObj.data2
-
-
-
-
+  
+  
+    
+  // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-      host: 'smtp.sendgrid.net',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      host: 'Smtp.gmail.com',
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
-          user: "apikey",
-          pass: process.env.API_KEY
+          user: "hegner123", // generated ethereal user
+          pass: "GingER699" // generated ethereal password
       }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-      from: '"Michael Hegner"<hegner123@gmail.com>', // sender address
-      to: [data2, "hegner123@gmail.com"], // list of receivers
+      from: '"Michael Hegner" <hegner123@gmail.com>', // sender address
+      to: data2, // list of receivers
       bcc: 'hegner123@gmail.com',
       subject: 'Thanks for your request', // Subject line
       text: "Thanks for requesting a copy of my resume " + data1 + ".", // plain text body
@@ -40,24 +37,23 @@ async function mail(dataObj) {
   });
 
   console.log('Message sent: %s', info.messageId);
-
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
 
 }
 
 module.exports = function(app){
-
+  
   app.get('/', function(req,res){
-    console.log("controller link")
-    res.render('pages/index');
+    res.render('index');
   });
 
   app.get('/portfolio', function(req,res){
-    res.render('pages/portfolio');
+    res.render('portfolio');
   });
 
   app.get('/contact', function(req,res){
-    res.render('pages/contact');
+    res.render('contact');
   });
 
 

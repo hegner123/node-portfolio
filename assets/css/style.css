@@ -28,12 +28,7 @@ h1 {
 }
 
 .my-brand {
-  height: 65.5938px;
   background:#eb2a3a;
-}
-
-.my-logo {
-  width: inherit;
 }
 
 
@@ -84,10 +79,6 @@ h1 {
 
 .space {
   height:50px !important;
-}
-
-.space-two {
-  height:100px !important;
 }
 
 .my-btn {
