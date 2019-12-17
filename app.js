@@ -1,6 +1,6 @@
 var express = require('express');
 var portController = require('./controllers/portController')
-
+let PORT = process.env.PORT || 8080;
 var app = express();
 
 // set up template engine
@@ -16,7 +16,8 @@ app.use(express.static('./'));
 portController(app);
 
 
-// listen to port
-app.listen();
+app.listen(PORT, function() {
+  console.log("App running on port " + PORT + "!");
+});
 
 
