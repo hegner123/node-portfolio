@@ -1,7 +1,7 @@
-var express = require('express');
-var portController = require('./controllers/portController')
+const express = require('express');
+const portController = require('./controllers/portController')
 let PORT = process.env.PORT || 8080;
-var app = express();
+const app = express();
 
 // set up template engine
 app.set('view engine', 'ejs');
