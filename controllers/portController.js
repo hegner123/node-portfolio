@@ -1,5 +1,8 @@
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+require('dotenv').config();
+
+console.log(process.env)
 
 
 var urlencodedParser = bodyParser.urlencoded({extended:false});
@@ -21,7 +24,7 @@ async function mail(dataObj) {
       secure: true, // true for 465, false for other ports
       auth: {
           user: "hegner123", // generated ethereal user
-          pass: "GingER699" // generated ethereal password
+          pass: userPass // generated ethereal password
       }
   });
 
