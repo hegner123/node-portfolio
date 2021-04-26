@@ -14,9 +14,7 @@ async function mail(dataObj) {
 
   var data1 = dataObj.data1
   var data2 = dataObj.data2
-  
-  
-    
+
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
       host: 'Smtp.gmail.com',
@@ -46,7 +44,7 @@ async function mail(dataObj) {
 }
 
 module.exports = function(app){
-  
+
   app.get('/', function(req,res){
     res.render('index');
   });
